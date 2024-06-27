@@ -1,0 +1,17 @@
+name: CDd
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
+      
+jobs:
+  fc:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: cd
+      run: echo "2uyu"
