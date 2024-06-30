@@ -5,15 +5,14 @@ on:
     branches: [ main ]
   pull_request:
    branches: [ main ]
-    
 jobs:
    build:
 
-     runs-on: ubuntu-latest
+runs-on: ubuntu-latest
 
     
 
-  steps:
+   steps:
     # - name: Checkout code
     #   uses: actions/checkout@v2
 
@@ -24,8 +23,7 @@ jobs:
 
     - name: hello
       run: echo "uy"
-      
-  build2:
+       build2:
 
     runs-on: ubuntu-latest
 
