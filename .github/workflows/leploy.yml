@@ -7,12 +7,8 @@ on:
    branches: [ main ]
 jobs:
    build:
-
-runs-on: ubuntu-latest
-
-    
-
-   steps:
+    runs-on: ubuntu-latest
+    steps:
     # - name: Checkout code
     #   uses: actions/checkout@v2
 
@@ -23,7 +19,8 @@ runs-on: ubuntu-latest
 
     - name: hello
       run: echo "uy"
-       build2:
+      
+   build2:
 
     runs-on: ubuntu-latest
 
