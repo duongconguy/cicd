@@ -1,17 +1,24 @@
-name: CDd
+name: dev
+
 on:
-  workflow_run:
-    workflows: ["CIb"]
-    types:
-      - completed
-      
+  push:
+   branches: [dev]
+
 jobs:
-  fc:
+   build:
+    name: uy
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    # - name: Checkout code
+    #   uses: actions/checkout@v2
 
-    - name: cd
-      run: echo "2uyu"
+    # - name: Set up Node.js
+    #   uses: actions/setup-node@v2
+    #   with:
+    #     node-version: '14'
+
+    - name: hello
+      id: hello2 
+      run: echo "dev"
+      
+
