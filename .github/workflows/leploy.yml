@@ -35,4 +35,8 @@ jobs:
     #     node-version: '14'
 
     - name: hello
+      id: hello1
       run: echo "fdsvcb"
+    - if: ${{ steps.hello1}}
+      name: fhhj
+      run: echo "hgf"
