@@ -17,6 +17,7 @@ jobs:
     #     node-version: '14'
 
     - name: hello
+      id: hello2 
       run: echo "uy"
       
    build2:
@@ -37,6 +38,6 @@ jobs:
     - name: hello
       id: hello1
       run: echo "fdsvcb"
-    - if: ${{ steps.hello1}}
+    - if: ${{ steps.hello2}}
       name: fhhj
       run: echo "hgf"
