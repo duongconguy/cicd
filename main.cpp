@@ -1,5 +1,5 @@
 #include <iostream>
-#include <filesystem>
+#include <windows.h>
 #include "UserManager.h"
 #include "WalletManager.h"
 #include "TransactionManager.h"
@@ -7,7 +7,13 @@
 #include "utils.h"
 #include "Hash.h"
 
-namespace fs = std::filesystem;
+// Cấu hình console để hiển thị tiếng Việt
+void setupConsole() {
+    // Đặt code page UTF-8
+    SetConsoleOutputCP(65001);
+    // Bật chế độ Unicode
+    SetConsoleCP(65001);
+}
 
 const std::string USER_FILE = "data/users.dat";
 const std::string WALLET_FILE = "data/wallets.dat";
@@ -17,7 +23,8 @@ const std::string WALLET_BK = "data/backup/wallets_backup.dat";
 const std::string TX_BK = "data/backup/transactions_backup.dat";
 
 void ensureDataDirs() {
-    fs::create_directories("data/backup");
+    CreateDirectoryA("data", NULL);
+    CreateDirectoryA("data/backup", NULL);
 }
 
 void showMenu() {
@@ -31,6 +38,7 @@ void showMenu() {
 }
 
 int main() {
+    setupConsole();
     ensureDataDirs();
     UserManager userMgr;
     WalletManager walletMgr;
